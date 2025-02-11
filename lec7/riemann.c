@@ -1,33 +1,33 @@
-#include <stdio.h>
-#include <math.h>
-double Riemann(double a, double b, int n);
-double f(double x);
-int main(){
-    double a, b;
-    int n;
-
-    printf("Enter a, b, n: ");
-    scanf("%lf %lf %d", &a, &b, &n); 
-
-    printf("Integral value = %lf\n", Riemann(a, b, n));
-
+#include<stdio.h>
+float fun(float x);
+float reimann_int(int n, float a, float b);
+int main()
+{
+  int n=100;
+  float a=-1.0f;
+  float b=1.0f;
+  float s; 
+  s=reimann_int(n,a,b);
+  printf("The integral of f(x) is %f\n", s);		
+  return 0;
 }
-// y = x
-double f(double x){
-//    return cos(x);
-    return x;
-}
-double Riemann(double a, double b, int n){
-    double result = 0.0;
-    double dx = (b-a)/n;
-    double x, y;
 
-    int i;
-    for(i=0 ; i<n; i++){
-        x = a + dx*i;
-        y = f(x);
-        result = result + dx*y;
-    }
-    return result;
-
+float reimann_int(int n, float a, float b)
+{
+     float dx; int i;
+     dx=(b-a)/n; float s=0.0;
+     float x, y;
+     for (i=0;i<n;i++) {
+	     x=a+dx*i;
+	     y=fun(x);
+	     s+=y*dx;
 }
+return s;
+}
+float fun(float x)
+{
+	float y;
+	y=x*x+2*x+1;
+	return y;
+}
+
