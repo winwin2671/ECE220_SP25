@@ -6,11 +6,12 @@ int main(){
     char des[SIZE];
     char input[SIZE];
     fgets(input, SIZE, stdin);
-    int rc  =  sscanf(input, "%s%d%d", des, &var1, &var2);
+    int rc  =  sscanf(input, "%d%s%d", &var1, des, &var2);
     printf("%s\n", input);
     printf("var1: %d\n", var1);
     printf("vars2: %d\n", var2);
     printf("des: %s\n", des);
+    printf("%s\n", input);
     printf("rc: %d\n", rc);
 }
 
