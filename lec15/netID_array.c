@@ -3,7 +3,10 @@
 int main()
 {
     char name[3][10]={{"abc"},{"bcd"},{"def"}};
-    printf("%s\n", *(name+2));
+    printf("%s\n", *(name+1));
+
+    printf("%s\n", name[1]);
+
     
     char *netID[3];
     
