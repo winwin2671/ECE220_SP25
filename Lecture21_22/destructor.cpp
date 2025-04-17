@@ -28,7 +28,7 @@ int main(){
 // Person p = {"Alice", 20};
  Person p("Alice", 20);
  p.ShowData();
- Person P2("tom", 30);
+ Person P2("Bob", 30);
  P2.ShowData();
 }
 
